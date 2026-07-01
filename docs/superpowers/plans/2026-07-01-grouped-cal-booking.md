@@ -105,9 +105,9 @@ export const TARIEVEN: TarievenGroep[] = [
     rijen: [
       { behandeling: 'Volledig lichaam', duur: "90'", prijs: '€100', calSlug: 'ontspanning-volledig-90' },
       { behandeling: 'Volledig lichaam', duur: "60'", prijs: '€70', calSlug: 'ontspanning-volledig-60' },
-      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'ontspanning-rugnekbenen-60' },
-      { behandeling: 'Rug-nek', duur: "50'", prijs: '€60', calSlug: 'ontspanning-rugnek-50' },
-      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'ontspanning-rugnek-40' },
+      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'ontspanning-rug-nek-benen-60' },
+      { behandeling: 'Rug-nek', duur: "50'", prijs: '€60', calSlug: 'ontspanning-rug-nek-50' },
+      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'ontspanning-rug-nek-40' },
       { behandeling: 'Benen', duur: "40'", prijs: '€50', calSlug: 'ontspanning-benen-40' },
     ],
   },
@@ -115,11 +115,11 @@ export const TARIEVEN: TarievenGroep[] = [
     slug: 'sportmassage',
     naam: 'Sportmassage',
     rijen: [
-      { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rugnekbenen-90' },
-      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'sport-rugnekbenen-60' },
-      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'sport-rugnek-40' },
+      { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rug-nek-benen-90' },
+      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'sport-rug-nek-benen-60' },
+      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'sport-rug-nek-40' },
       { behandeling: 'Benen', duur: "40'", prijs: '€50', calSlug: 'sport-benen-40' },
-      { behandeling: 'Rug-nek', duur: "30'", prijs: '€40', calSlug: 'sport-rugnek-30' },
+      { behandeling: 'Rug-nek', duur: "30'", prijs: '€40', calSlug: 'sport-rug-nek-30' },
       { behandeling: 'Benen', duur: "30'", prijs: '€40', calSlug: 'sport-benen-30' },
     ],
   },
@@ -306,7 +306,7 @@ const groep: TarievenGroep = {
   slug: 'sportmassage',
   naam: 'Sportmassage',
   rijen: [
-    { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rugnekbenen-90' },
+    { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rug-nek-benen-90' },
     { behandeling: 'Benen', duur: "30'", prijs: '€40', calSlug: 'sport-benen-30' },
   ],
 }
@@ -321,7 +321,7 @@ describe('SessionStep', () => {
     render(<SessionStep groep={groep} />)
     expect(screen.getByRole('link', { name: /Rug-nek-benen.*90'/ })).toHaveAttribute(
       'href',
-      '/afspraak?type=sportmassage&sessie=sport-rugnekbenen-90'
+      '/afspraak?type=sportmassage&sessie=sport-rug-nek-benen-90'
     )
     expect(screen.getByRole('link', { name: /Benen.*30'/ })).toHaveAttribute(
       'href',
@@ -429,15 +429,15 @@ vi.mock('@calcom/embed-react', () => ({
 
 describe('BookingCalendar', () => {
   it('embeds the calendar scoped to the given calSlug', () => {
-    render(<BookingCalendar calSlug="sport-rugnek-40" backHref="/afspraak?type=sportmassage" />)
+    render(<BookingCalendar calSlug="sport-rug-nek-40" backHref="/afspraak?type=sportmassage" />)
     expect(screen.getByTestId('cal-embed')).toHaveAttribute(
       'data-cal-link',
-      'jelle-d-odewhk/sport-rugnek-40'
+      'jelle-d-odewhk/sport-rug-nek-40'
     )
   })
 
   it('links back to the given backHref', () => {
-    render(<BookingCalendar calSlug="sport-rugnek-40" backHref="/afspraak?type=sportmassage" />)
+    render(<BookingCalendar calSlug="sport-rug-nek-40" backHref="/afspraak?type=sportmassage" />)
     expect(screen.getByRole('link', { name: /andere sessie kiezen/i })).toHaveAttribute(
       'href',
       '/afspraak?type=sportmassage'
@@ -570,11 +570,11 @@ describe('BookingFlow', () => {
   })
 
   it('shows the scoped calendar for a valid type and sessie', () => {
-    searchParamsMock.value = new URLSearchParams('type=sportmassage&sessie=sport-rugnek-40')
+    searchParamsMock.value = new URLSearchParams('type=sportmassage&sessie=sport-rug-nek-40')
     render(<BookingFlow />)
     expect(screen.getByTestId('cal-embed')).toHaveAttribute(
       'data-cal-link',
-      'jelle-d-odewhk/sport-rugnek-40'
+      'jelle-d-odewhk/sport-rug-nek-40'
     )
   })
 })

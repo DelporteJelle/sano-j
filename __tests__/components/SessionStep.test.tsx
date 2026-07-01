@@ -6,7 +6,7 @@ const groep: TarievenGroep = {
   slug: 'sportmassage',
   naam: 'Sportmassage',
   rijen: [
-    { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rugnekbenen-90' },
+    { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rug-nek-benen-90' },
     { behandeling: 'Benen', duur: "30'", prijs: '€40', calSlug: 'sport-benen-30' },
   ],
 }
@@ -21,7 +21,7 @@ describe('SessionStep', () => {
     render(<SessionStep groep={groep} />)
     expect(screen.getByRole('link', { name: /Rug-nek-benen.*90'/ })).toHaveAttribute(
       'href',
-      '/afspraak?type=sportmassage&sessie=sport-rugnekbenen-90'
+      '/afspraak?type=sportmassage&sessie=sport-rug-nek-benen-90'
     )
     expect(screen.getByRole('link', { name: /Benen.*30'/ })).toHaveAttribute(
       'href',

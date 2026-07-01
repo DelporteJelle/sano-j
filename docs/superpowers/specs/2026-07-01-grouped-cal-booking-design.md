@@ -54,15 +54,15 @@ Convention: `<categorie-kort>-<lichaamsdeel>-<duur>`.
 |---|---|---|---|---|
 | ontspanningsmassage | Volledig lichaam | 90' | €100 | `ontspanning-volledig-90` |
 | ontspanningsmassage | Volledig lichaam | 60' | €70 | `ontspanning-volledig-60` |
-| ontspanningsmassage | Rug-nek-benen | 60' | €70 | `ontspanning-rugnekbenen-60` |
-| ontspanningsmassage | Rug-nek | 50' | €60 | `ontspanning-rugnek-50` |
-| ontspanningsmassage | Rug-nek | 40' | €50 | `ontspanning-rugnek-40` |
+| ontspanningsmassage | Rug-nek-benen | 60' | €70 | `ontspanning-rug-nek-benen-60` |
+| ontspanningsmassage | Rug-nek | 50' | €60 | `ontspanning-rug-nek-50` |
+| ontspanningsmassage | Rug-nek | 40' | €50 | `ontspanning-rug-nek-40` |
 | ontspanningsmassage | Benen | 40' | €50 | `ontspanning-benen-40` |
-| sportmassage | Rug-nek-benen | 90' | €100 | `sport-rugnekbenen-90` |
-| sportmassage | Rug-nek-benen | 60' | €70 | `sport-rugnekbenen-60` |
-| sportmassage | Rug-nek | 40' | €50 | `sport-rugnek-40` |
+| sportmassage | Rug-nek-benen | 90' | €100 | `sport-rug-nek-benen-90` |
+| sportmassage | Rug-nek-benen | 60' | €70 | `sport-rug-nek-benen-60` |
+| sportmassage | Rug-nek | 40' | €50 | `sport-rug-nek-40` |
 | sportmassage | Benen | 40' | €50 | `sport-benen-40` |
-| sportmassage | Rug-nek | 30' | €40 | `sport-rugnek-30` |
+| sportmassage | Rug-nek | 30' | €40 | `sport-rug-nek-30` |
 | sportmassage | Benen | 30' | €40 | `sport-benen-30` |
 | cupping | Hijama Cupping massage | 30' | €40 | `cupping-massage-30` |
 | cupping | Hijama Cupping | 20' | €25 | `cupping-20` |
