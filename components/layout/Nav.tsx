@@ -6,17 +6,6 @@ import { useEffect, useState } from 'react'
 import { NAV_LINKS } from '@/lib/content'
 import Button from '@/components/ui/Button'
 
-const maskStyle = {
-  WebkitMaskImage: 'url(/images/logo.svg)',
-  maskImage: 'url(/images/logo.svg)',
-  WebkitMaskRepeat: 'no-repeat',
-  maskRepeat: 'no-repeat',
-  WebkitMaskSize: 'contain',
-  maskSize: 'contain',
-  WebkitMaskPosition: 'center',
-  maskPosition: 'center',
-} as const
-
 export default function Nav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
@@ -38,15 +27,13 @@ export default function Nav() {
     >
       <nav className="flex items-center gap-0 px-8 md:px-12 py-5">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 mr-9 flex-shrink-0">
-          <span
-            aria-hidden="true"
-            className={`h-6 w-6 flex-shrink-0 ${scrolled ? 'bg-brand-black' : 'bg-yellow'}`}
-            style={maskStyle}
-          />
-          <span className={`font-serif text-[22px] tracking-wide ${scrolled ? 'text-brand-black' : 'text-yellow'}`}>
-            Sano-J
-          </span>
+        <Link
+          href="/"
+          className={`font-serif text-[22px] tracking-wide mr-9 flex-shrink-0 ${
+            scrolled ? 'text-brand-black' : 'text-yellow'
+          }`}
+        >
+          Sano-J
         </Link>
 
         {/* Desktop links */}
