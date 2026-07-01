@@ -64,7 +64,7 @@ export default function BehandelingenPage() {
                   </li>
                 ))}
               </ul>
-              <Button variant="primary" href="/afspraak">
+              <Button variant="primary" href={`/afspraak?type=${b.slug}`}>
                 Maak een afspraak →
               </Button>
             </div>

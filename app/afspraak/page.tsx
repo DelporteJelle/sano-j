@@ -1,27 +1,9 @@
-'use client'
-
-import Cal, { getCalApi } from '@calcom/embed-react'
-import { useEffect } from 'react'
-
-// Note: metadata export doesn't work in 'use client' — move to a layout or use generateMetadata in a wrapper
-// For now, set the title via a server wrapper (see layout.tsx)
+import { Suspense } from 'react'
+import BookingFlow from '@/components/booking/BookingFlow'
 
 export default function AfspraakPage() {
-  useEffect(() => {
-    getCalApi({ namespace: 'sano-j' }).then((cal) => {
-      cal('ui', {
-        theme: 'light',
-        styles: {
-          branding: { brandColor: '#d1ca22' },
-        },
-        hideEventTypeDetails: false,
-      })
-    })
-  }, [])
-
   return (
     <div className="bg-cream min-h-screen">
-      {/* Minimal header */}
       <div className="bg-brand-black px-8 md:px-12 pt-32 pb-14 text-center">
         <p className="text-[11px] font-semibold tracking-[0.14em] uppercase text-yellow mb-3">
           Online reserveren
@@ -33,14 +15,10 @@ export default function AfspraakPage() {
         </p>
       </div>
 
-      {/* Cal.com embed */}
       <div className="px-4 py-12">
-        <Cal
-          namespace="sano-j"
-          calLink="https://cal.com/jelle-d-odewhk"
-          style={{ width: '100%', height: '100%', overflow: 'scroll' }}
-          config={{ layout: 'month_view' }}
-        />
+        <Suspense fallback={null}>
+          <BookingFlow />
+        </Suspense>
       </div>
     </div>
   )
