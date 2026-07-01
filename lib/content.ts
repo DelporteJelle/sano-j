@@ -31,6 +31,7 @@ export type Behandeling = {
   indicaties: string[]
   afbeelding: string
   afbeeldingAlt: string
+  startprijs: string
 }
 
 export const BEHANDELINGEN: Behandeling[] = [
@@ -43,6 +44,7 @@ export const BEHANDELINGEN: Behandeling[] = [
     indicaties: ['Stress en burn-out', 'Spierspanning', 'Slaapproblemen', 'Algemeen welzijn'],
     afbeelding: '/images/behandelingen/ontspanning.jpg',
     afbeeldingAlt: 'Ontspanningsmassage bij Sano-J Merelbeke',
+    startprijs: '€50',
   },
   {
     slug: 'sportmassage',
@@ -53,6 +55,7 @@ export const BEHANDELINGEN: Behandeling[] = [
     indicaties: ['Spierherstel na inspanning', 'Blessurepreventie', 'Prestatieoptimalisatie', 'Spierkrampen'],
     afbeelding: '/images/behandelingen/sport.jpg',
     afbeeldingAlt: 'Sportmassage bij Sano-J Merelbeke',
+    startprijs: '€40',
   },
   {
     slug: 'cupping',
@@ -63,6 +66,7 @@ export const BEHANDELINGEN: Behandeling[] = [
     indicaties: ['Chronische rugpijn', 'Diepe spierspanning', 'Slechte doorbloeding', 'Littekenweefsel'],
     afbeelding: '/images/behandelingen/cupping.jpg',
     afbeeldingAlt: 'Cupping therapie bij Sano-J Merelbeke',
+    startprijs: '€25',
   },
   {
     slug: 'medical-taping',
@@ -73,48 +77,61 @@ export const BEHANDELINGEN: Behandeling[] = [
     indicaties: ['Sportblessures', 'Gewrichtspijn', 'Zwelling', 'Postoperatief herstel'],
     afbeelding: '/images/behandelingen/taping.jpg',
     afbeeldingAlt: 'Medical taping bij Sano-J Merelbeke',
+    startprijs: '€15',
   },
 ]
 
+export type TarievenRij = {
+  behandeling: string
+  duur: string
+  prijs: string
+  calSlug: string
+}
+
 export type TarievenGroep = {
+  slug: string
   naam: string
-  rijen: { behandeling: string; duur: string; prijs: string }[]
+  rijen: TarievenRij[]
 }
 
 export const TARIEVEN: TarievenGroep[] = [
   {
+    slug: 'ontspanningsmassage',
     naam: 'Ontspanningsmassage',
     rijen: [
-      { behandeling: 'Volledig lichaam', duur: "90'", prijs: '€100' },
-      { behandeling: 'Volledig lichaam', duur: "60'", prijs: '€70' },
-      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70' },
-      { behandeling: 'Rug-nek', duur: "50'", prijs: '€60' },
-      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50' },
-      { behandeling: 'Benen', duur: "40'", prijs: '€50' },
+      { behandeling: 'Volledig lichaam', duur: "90'", prijs: '€100', calSlug: 'ontspanning-volledig-90' },
+      { behandeling: 'Volledig lichaam', duur: "60'", prijs: '€70', calSlug: 'ontspanning-volledig-60' },
+      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'ontspanning-rugnekbenen-60' },
+      { behandeling: 'Rug-nek', duur: "50'", prijs: '€60', calSlug: 'ontspanning-rugnek-50' },
+      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'ontspanning-rugnek-40' },
+      { behandeling: 'Benen', duur: "40'", prijs: '€50', calSlug: 'ontspanning-benen-40' },
     ],
   },
   {
+    slug: 'sportmassage',
     naam: 'Sportmassage',
     rijen: [
-      { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100' },
-      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70' },
-      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50' },
-      { behandeling: 'Benen', duur: "40'", prijs: '€50' },
-      { behandeling: 'Rug-nek', duur: "30'", prijs: '€40' },
-      { behandeling: 'Benen', duur: "30'", prijs: '€40' },
+      { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rugnekbenen-90' },
+      { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'sport-rugnekbenen-60' },
+      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'sport-rugnek-40' },
+      { behandeling: 'Benen', duur: "40'", prijs: '€50', calSlug: 'sport-benen-40' },
+      { behandeling: 'Rug-nek', duur: "30'", prijs: '€40', calSlug: 'sport-rugnek-30' },
+      { behandeling: 'Benen', duur: "30'", prijs: '€40', calSlug: 'sport-benen-30' },
     ],
   },
   {
+    slug: 'cupping',
     naam: 'Hijama Cupping',
     rijen: [
-      { behandeling: 'Hijama Cupping massage', duur: "30'", prijs: '€40' },
-      { behandeling: 'Hijama Cupping', duur: "20'", prijs: '€25' },
+      { behandeling: 'Hijama Cupping massage', duur: "30'", prijs: '€40', calSlug: 'cupping-massage-30' },
+      { behandeling: 'Hijama Cupping', duur: "20'", prijs: '€25', calSlug: 'cupping-20' },
     ],
   },
   {
+    slug: 'medical-taping',
     naam: 'Medical Taping',
     rijen: [
-      { behandeling: 'Plaats waar nodig', duur: "15'", prijs: '€15' },
+      { behandeling: 'Plaats waar nodig', duur: "15'", prijs: '€15', calSlug: 'taping-15' },
     ],
   },
 ]
@@ -138,7 +155,8 @@ export const REVIEWS: Review[] = [
   },
 ]
 
-export type AbonnementGroep = TarievenGroep
+export type AbonnementRij = { behandeling: string; duur: string; prijs: string }
+export type AbonnementGroep = { naam: string; rijen: AbonnementRij[] }
 
 export const ABONNEMENTEN: AbonnementGroep[] = [
   {
