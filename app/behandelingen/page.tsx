@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import Image from 'next/image'
 import { BEHANDELINGEN } from '@/lib/content'
 import Button from '@/components/ui/Button'
@@ -70,6 +71,25 @@ export default function BehandelingenPage() {
           </div>
         </section>
       ))}
+      <Script id="schema-services" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': BEHANDELINGEN.map((b) => ({
+            '@type': 'Service',
+            name: b.naam,
+            description: b.beschrijving,
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'Sano-J Massage & Welzijn',
+              url: 'https://www.sano-j.be',
+            },
+            areaServed: {
+              '@type': 'City',
+              name: 'Gent',
+            },
+          })),
+        })}
+      </Script>
     </>
   )
 }
