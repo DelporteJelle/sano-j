@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import SectionHeader from '@/components/ui/SectionHeader'
-import { CONTACT_INFO, OPENING_HOURS } from '@/lib/content'
+import { CONTACT_INFO } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Over mij',
@@ -14,9 +14,9 @@ export default function OverMijPage() {
   return (
     <>
       {/* Hero */}
-      <div className="relative h-[40vh] min-h-[280px] flex items-end overflow-hidden">
+      <div className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
-          src="/images/over-mij/jonas-1.jpg"
+          src="/images/over-mij/jonas-2.jpg"
           alt="Jonas Quintyn Sano-J"
           fill
           priority
@@ -60,9 +60,9 @@ export default function OverMijPage() {
           </div>
 
           <div className="flex flex-col gap-8">
-            <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md">
+            <div className="relative aspect-portrait rounded-xl overflow-hidden shadow-md">
               <Image
-                src="/images/over-mij/jonas-2.jpg"
+                src="/images/over-mij/jonas-1.jpg"
                 alt="Jonas Quintyn aan het werk"
                 fill
                 className="object-cover"
@@ -75,7 +75,6 @@ export default function OverMijPage() {
               <h3 className="font-serif text-xl text-brand-black mb-5">Praktijkinfo</h3>
               <ul className="flex flex-col gap-3 text-[14px] text-brand-gray">
                 <li>📍 {CONTACT_INFO.address}</li>
-                <li>🕐 {OPENING_HOURS.weekdays}</li>
                 <li>📞 <a href={CONTACT_INFO.phoneHref} className="hover:text-brand-black">{CONTACT_INFO.phone}</a></li>
                 <li>📧 <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-brand-black">{CONTACT_INFO.email}</a></li>
                 <li>✅ Ruime parking beschikbaar</li>

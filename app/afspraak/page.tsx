@@ -37,7 +37,7 @@ export default function AfspraakPage() {
       <div className="px-4 py-12">
         <Cal
           namespace="sano-j"
-          calLink="jonas-quintyn/sano-j"
+          calLink="https://cal.com/jelle-d-odewhk"
           style={{ width: '100%', height: '100%', overflow: 'scroll' }}
           config={{ layout: 'month_view' }}
         />

@@ -5,7 +5,7 @@ import { CONTACT_INFO } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Cadeaubon',
-  description: 'Geef een massage cadeau! Bestel een cadeaubon bij Sano-J Massage & Welzijn in Merelbeke.',
+  description: 'Geef een massage cadeau! Bestel een cadeaubon voor een vrij bedrag of een specifieke behandeling bij Sano-J Massage & Welzijn in Merelbeke.',
 }
 
 export default function CadeaubonPage() {
@@ -20,9 +20,9 @@ export default function CadeaubonPage() {
           className="mb-8"
         />
         <p className="text-[15px] text-brand-gray leading-relaxed mb-10">
-          Een cadeaubon is een unieke kortingscode die de ontvanger kan gebruiken bij het
-          boeken van een massage. Neem contact op met Jonas om er één te bestellen. Prijs
-          en geldigheid worden samen bepaald.
+          Kies een vrij te bepalen bedrag of een specifieke behandeling. Neem contact op
+          met Jonas om de details te bespreken en de bon te bestellen. Betalen kan ter
+          plaatse, cash of via Payconiq.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="primary" href={`mailto:${CONTACT_INFO.email}?subject=Cadeaubon%20bestellen`}>

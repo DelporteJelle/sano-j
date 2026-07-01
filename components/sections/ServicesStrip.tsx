@@ -1,4 +1,4 @@
-import { OPENING_HOURS, CONTACT_INFO } from '@/lib/content'
+import { CONTACT_INFO } from '@/lib/content'
 
 const SERVICES = ['Ontspanningsmassage', 'Sportmassage', 'Cupping', 'Medical Taping']
 
@@ -12,7 +12,7 @@ export default function ServicesStrip() {
         </span>
       ))}
       <span className="ml-auto text-[13px] text-brand-black/55 hidden lg:block">
-        📍 {CONTACT_INFO.address} &nbsp;·&nbsp; {OPENING_HOURS.weekdays}
+        📍 {CONTACT_INFO.address}
       </span>
     </div>
   )

@@ -1,5 +1,5 @@
 import Button from '@/components/ui/Button'
-import { OPENING_HOURS, CONTACT_INFO } from '@/lib/content'
+import { CONTACT_INFO } from '@/lib/content'
 
 export default function BookingCTA() {
   return (
@@ -18,7 +18,7 @@ export default function BookingCTA() {
         Maak uw afspraak →
       </Button>
       <p className="mt-7 text-[13px] text-white/30">
-        {OPENING_HOURS.weekdays} &nbsp;·&nbsp; {CONTACT_INFO.address}
+        {CONTACT_INFO.address}
       </p>
     </section>
   )

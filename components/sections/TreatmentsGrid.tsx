@@ -4,7 +4,7 @@ import TreatmentCard from '@/components/ui/TreatmentCard'
 
 const START_PRIJZEN: Record<string, string> = {
   ontspanningsmassage: '€50',
-  sportmassage: '€50',
+  sportmassage: '€40',
   cupping: '€25',
   'medical-taping': '€15',
 }

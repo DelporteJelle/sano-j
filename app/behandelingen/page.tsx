@@ -15,7 +15,7 @@ export default function BehandelingenPage() {
   return (
     <>
       {/* Sub-hero */}
-      <div className="relative h-[40vh] min-h-[280px] flex items-end overflow-hidden">
+      <div className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
           src="/images/behandelingen/ontspanning.jpg"
           alt="Behandelingen Sano-J"

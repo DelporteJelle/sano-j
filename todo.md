@@ -1,0 +1,4 @@
+- extra foto's voor hero homepage
+- foto voor hero page behandelingen
+- grouping of events in cal?
+- cadeaubon page

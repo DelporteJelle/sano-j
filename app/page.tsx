@@ -38,20 +38,12 @@ export default function HomePage() {
           email: 'jonasquintyn@gmail.com',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Zwijnaardsesteenweg',
+            streetAddress: 'Zwijnaardsesteenweg 56A',
             addressLocality: 'Merelbeke',
             addressRegion: 'Oost-Vlaanderen',
             postalCode: '9820',
             addressCountry: 'BE',
           },
-          openingHoursSpecification: [
-            {
-              '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-              opens: '10:00',
-              closes: '20:00',
-            },
-          ],
           priceRange: '€15 – €100',
         })}
       </Script>

@@ -12,7 +12,7 @@ export default function ReviewsGrid() {
         subtitle="Ervaringen van mensen die Jonas al bezochten."
         className="mb-10"
       />
-      <div className="grid md:grid-cols-3 gap-5">
+      <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
         {preview.map((review) => (
           <div key={review.naam} className="bg-white rounded-[10px] p-7 shadow-sm">
             <div className="text-yellow text-base mb-4">{'★'.repeat(review.sterren)}</div>

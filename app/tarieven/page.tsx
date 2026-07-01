@@ -14,7 +14,7 @@ export default function TarievenPage() {
   return (
     <>
       {/* Sub-hero */}
-      <div className="relative h-[40vh] min-h-[280px] flex items-end overflow-hidden">
+      <div className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
         <Image
           src="/images/tarieven/tarieven-1.jpg"
           alt="Tarieven Sano-J"
@@ -34,40 +34,42 @@ export default function TarievenPage() {
 
       {/* Pricing tables */}
       <section className="bg-cream px-8 md:px-12 py-20">
-        <SectionHeader
-          tag="Overzicht"
-          title="Prijslijst"
-          subtitle="Alle prijzen zijn inclusief btw. Betaling ter plaatse na de behandeling."
-          className="mb-14"
-        />
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl">
-          {TARIEVEN.map((groep) => (
-            <div key={groep.naam} className="bg-white rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-brand-black px-6 py-4">
-                <h2 className="font-serif text-xl text-white">{groep.naam}</h2>
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader
+            tag="Overzicht"
+            title="Prijslijst"
+            subtitle="Alle prijzen zijn inclusief btw. Betaling ter plaatse na de behandeling."
+            className="mb-14"
+          />
+          <div className="grid md:grid-cols-2 gap-8">
+            {TARIEVEN.map((groep) => (
+              <div key={groep.naam} className="bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="bg-brand-black px-6 py-4">
+                  <h2 className="font-serif text-xl text-white">{groep.naam}</h2>
+                </div>
+                <table className="w-full">
+                  <tbody>
+                    {groep.rijen.map((rij, i) => (
+                      <tr
+                        key={`${rij.behandeling}-${rij.duur}`}
+                        className={i % 2 === 0 ? 'bg-white' : 'bg-cream'}
+                      >
+                        <td className="px-6 py-3 text-[14px] text-brand-black">{rij.behandeling}</td>
+                        <td className="px-4 py-3 text-[13px] text-brand-gray text-center">{rij.duur}</td>
+                        <td className="px-6 py-3 text-[14px] font-bold text-brand-black text-right">{rij.prijs}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-              <table className="w-full">
-                <tbody>
-                  {groep.rijen.map((rij, i) => (
-                    <tr
-                      key={`${rij.behandeling}-${rij.duur}`}
-                      className={i % 2 === 0 ? 'bg-white' : 'bg-cream'}
-                    >
-                      <td className="px-6 py-3 text-[14px] text-brand-black">{rij.behandeling}</td>
-                      <td className="px-4 py-3 text-[13px] text-brand-gray text-center">{rij.duur}</td>
-                      <td className="px-6 py-3 text-[14px] font-bold text-brand-black text-right">{rij.prijs}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-14 text-center">
-          <Button variant="primary" href="/afspraak" className="text-base px-10 py-4">
-            Maak uw afspraak →
-          </Button>
+          <div className="mt-14 text-center">
+            <Button variant="primary" href="/afspraak" className="text-base px-10 py-4">
+              Maak uw afspraak →
+            </Button>
+          </div>
         </div>
       </section>
     </>

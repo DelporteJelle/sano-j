@@ -98,17 +98,17 @@ export const TARIEVEN: TarievenGroep[] = [
     rijen: [
       { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100' },
       { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70' },
-      { behandeling: 'Rug-nek', duur: "40'", prijs: '€70' },
-      { behandeling: 'Benen', duur: "40'", prijs: '€60' },
-      { behandeling: 'Rug-nek', duur: "30'", prijs: '€50' },
-      { behandeling: 'Benen', duur: "30'", prijs: '€50' },
+      { behandeling: 'Rug-nek', duur: "40'", prijs: '€50' },
+      { behandeling: 'Benen', duur: "40'", prijs: '€50' },
+      { behandeling: 'Rug-nek', duur: "30'", prijs: '€40' },
+      { behandeling: 'Benen', duur: "30'", prijs: '€40' },
     ],
   },
   {
-    naam: 'Cupping',
+    naam: 'Hijama Cupping',
     rijen: [
-      { behandeling: 'Cupping massage', duur: "30'", prijs: '€40' },
-      { behandeling: 'Cupping zonder massage', duur: "20'", prijs: '€25' },
+      { behandeling: 'Hijama Cupping massage', duur: "30'", prijs: '€40' },
+      { behandeling: 'Hijama Cupping', duur: "20'", prijs: '€25' },
     ],
   },
   {
@@ -127,33 +127,40 @@ export type Review = {
 
 export const REVIEWS: Review[] = [
   {
-    naam: 'Thomas V.',
+    naam: 'Els Dewancker',
     sterren: 5,
-    tekst: 'Fantastische sportmassage na mijn wielerwedstrijd. Jonas weet exact waar de spanning zit en hoe die weg te werken.',
+    tekst: 'Professionele op maat aanpak, kan Jonas alleen maar warm aanbevelen!',
   },
   {
-    naam: 'Lies D.',
+    naam: 'Matthias B.',
     sterren: 5,
-    tekst: 'Eindelijk volledige ontspanning gevonden. De sfeer is rustig, Jonas is vriendelijk en professioneel. Absolute aanrader!',
+    tekst: 'Van cupping tot massage, elke behandeling dat ik hier laat doen is altijd dik in orde. Ik heb er nooit iets op aan te merken.',
+  },
+]
+
+export type AbonnementGroep = TarievenGroep
+
+export const ABONNEMENTEN: AbonnementGroep[] = [
+  {
+    naam: 'Ontspanningsmassage',
+    rijen: [
+      { behandeling: 'Volledig lichaam', duur: "6x 90'", prijs: '€570' },
+      { behandeling: 'Volledig lichaam', duur: "6x 60'", prijs: '€390' },
+      { behandeling: 'Rug-nek-benen', duur: "6x 60'", prijs: '€390' },
+      { behandeling: 'Rug-nek', duur: "6x 50'", prijs: '€330' },
+      { behandeling: 'Rug-nek', duur: "6x 40'", prijs: '€270' },
+      { behandeling: 'Benen', duur: "6x 40'", prijs: '€270' },
+    ],
   },
   {
-    naam: 'Marc B.',
-    sterren: 5,
-    tekst: 'De cupping behandeling heeft wonderen gedaan voor mijn rug. Ik ga zeker terug!',
-  },
-  {
-    naam: 'Sarah M.',
-    sterren: 5,
-    tekst: 'Zeer professionele aanpak. Jonas luistert goed naar wat je nodig hebt en past de massage daar perfect op aan.',
-  },
-  {
-    naam: 'Pieter K.',
-    sterren: 5,
-    tekst: 'Al meerdere keren geweest voor een sportmassage. Iedere keer opnieuw top!',
-  },
-  {
-    naam: 'An V.',
-    sterren: 5,
-    tekst: 'De combinatie van massage en medical taping na mijn knieblessure heeft echt geholpen. Aanrader voor sporters!',
+    naam: 'Sportmassage',
+    rijen: [
+      { behandeling: 'Rug-nek-benen', duur: "6x 90'", prijs: '€570' },
+      { behandeling: 'Rug-nek-benen', duur: "6x 60'", prijs: '€390' },
+      { behandeling: 'Rug-nek', duur: "6x 40'", prijs: '€270' },
+      { behandeling: 'Benen', duur: "6x 40'", prijs: '€270' },
+      { behandeling: 'Rug-nek', duur: "6x 30'", prijs: '€210' },
+      { behandeling: 'Benen', duur: "6x 30'", prijs: '€210' },
+    ],
   },
 ]
