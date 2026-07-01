@@ -89,7 +89,7 @@ export default function ContactForm() {
         <p className="text-red-600 text-[13px]">{errorMsg}</p>
       )}
 
-      <Button variant="primary" type="submit" className={state === 'loading' ? 'opacity-60 pointer-events-none' : ''}>
+      <Button variant="primary" type="submit" disabled={state === 'loading'}>
         {state === 'loading' ? 'Bezig met verzenden...' : 'Verstuur bericht →'}
       </Button>
     </form>

@@ -10,8 +10,8 @@
   --font-serif: 'DM Serif Display', serif;
   --font-sans: 'DM Sans', sans-serif;
 
-  --aspect-ratio-treatment: 1 / 1;
-  --aspect-ratio-portrait: 4 / 5;
+  --aspect-treatment: 1 / 1;
+  --aspect-portrait: 4 / 5;
 }
 
 @layer base {

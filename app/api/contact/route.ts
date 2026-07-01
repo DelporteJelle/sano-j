@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from 'next/server'
 import { sendContactEmail } from '@/lib/brevo'
 
 export async function POST(req: NextRequest) {
-  const body = await req.json()
+  let body: { naam?: string; email?: string; telefoon?: string; bericht?: string }
+  try {
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: 'Ongeldig verzoek.' }, { status: 400 })
+  }
   const { naam, email, telefoon, bericht } = body
 
   if (!naam || !email || !bericht) {

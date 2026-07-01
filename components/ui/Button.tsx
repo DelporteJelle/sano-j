@@ -9,6 +9,7 @@ type ButtonProps = {
   onClick?: () => void
   className?: string
   type?: 'button' | 'submit'
+  disabled?: boolean
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -17,7 +18,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   ghost: 'border-2 border-white/50 text-white/90 hover:border-white hover:text-white',
 }
 
-export default function Button({ children, variant, href, onClick, className = '', type = 'button' }: ButtonProps) {
+export default function Button({ children, variant, href, onClick, className = '', type = 'button', disabled }: ButtonProps) {
   const base = 'inline-flex items-center gap-2 px-6 py-3 rounded-[6px] text-sm font-bold transition-colors duration-200 cursor-pointer'
   const classes = `${base} ${variantClasses[variant]} ${className}`
 
@@ -30,7 +31,7 @@ export default function Button({ children, variant, href, onClick, className = '
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button type={type} onClick={onClick} disabled={disabled} className={`${classes} ${disabled ? 'opacity-60 cursor-not-allowed' : ''}`}>
       {children}
     </button>
   )
