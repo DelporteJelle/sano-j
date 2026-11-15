@@ -22,7 +22,7 @@ export default function Hero() {
           Massage &amp; Welzijn · Merelbeke
         </p>
         <h1 className="font-serif text-5xl md:text-6xl text-white leading-[1.05] mb-5">
-          Voel je<br />weer jezelf.
+          Meer rust.<br />Minder spanning.
         </h1>
         <p className="text-base text-white/70 leading-relaxed mb-8 max-w-md">
           Professionele massages op maat voor ontspanning, herstel en welzijn —
