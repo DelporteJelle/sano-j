@@ -67,9 +67,9 @@ export default function ContactForm() {
       </div>
       <div>
         <label className="block text-[12px] font-semibold text-brand-black mb-1.5" htmlFor="telefoon">
-          Telefoonnummer
+          Telefoonnummer <span className="text-yellow">*</span>
         </label>
-        <input id="telefoon" name="telefoon" type="tel" className={inputClass} placeholder="0499 00 00 00" />
+        <input id="telefoon" name="telefoon" type="tel" required className={inputClass} placeholder="0499 00 00 00" />
       </div>
       <div>
         <label className="block text-[12px] font-semibold text-brand-black mb-1.5" htmlFor="bericht">

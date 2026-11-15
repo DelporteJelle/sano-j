@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
+import { getPersonalMilestones } from '@/lib/content'
 
 export default function Hero() {
+  const { nursingYears } = getPersonalMilestones()
   return (
     <section className="relative h-[92vh] min-h-[560px] flex items-end overflow-hidden">
       {/* Background image */}
@@ -26,7 +28,7 @@ export default function Hero() {
         </h1>
         <p className="text-base text-white/70 leading-relaxed mb-8 max-w-md">
           Professionele massages op maat voor ontspanning, herstel en welzijn —
-          door Jonas Quintyn, verpleegkundige met 17 jaar ervaring.
+          door Jonas Quintyn, verpleegkundige met {nursingYears} jaar ervaring.
         </p>
         <div className="flex flex-wrap gap-4">
           <Button variant="primary" href="/afspraak">

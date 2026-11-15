@@ -1,7 +1,7 @@
 export type ContactFields = {
   naam: string
   email: string
-  telefoon?: string
+  telefoon: string
   bericht: string
 }
 
@@ -24,7 +24,7 @@ export async function sendContactEmail(fields: ContactFields): Promise<void> {
         <h2>Nieuw bericht via sano-j.be</h2>
         <p><strong>Naam:</strong> ${fields.naam}</p>
         <p><strong>E-mail:</strong> ${fields.email}</p>
-        ${fields.telefoon ? `<p><strong>Telefoon:</strong> ${fields.telefoon}</p>` : ''}
+        <p><strong>Telefoon:</strong> ${fields.telefoon}</p>
         <p><strong>Bericht:</strong></p>
         <p>${fields.bericht.replace(/\n/g, '<br/>')}</p>
       `,

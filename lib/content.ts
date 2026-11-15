@@ -4,10 +4,39 @@ export const CONTACT_INFO = {
   phone: '0499/36.68.33',
   phoneHref: 'tel:+32499366833',
   email: 'jonasquintyn@gmail.com',
-  address: 'Zwijnaardsesteenweg, Merelbeke',
+  address: 'Zwijnaardsesteenweg 57A, Merelbeke',
   facebook: 'https://www.facebook.com/Sano-J',
   instagram: 'https://www.instagram.com/sanojmassage',
 } as const
+
+const PERSONAL_DATES = {
+  birthDate: { year: 1987, month: 11, day: 13 },
+  nursingStartYear: 2009,
+  practiceStartYear: 2023,
+} as const
+
+export function getPersonalMilestones() {
+  const dateParts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Brussels',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).formatToParts(new Date())
+  const part = (type: Intl.DateTimeFormatPartTypes) =>
+    Number(dateParts.find((item) => item.type === type)?.value)
+  const year = part('year')
+  const month = part('month')
+  const day = part('day')
+  const birthdayHasPassed =
+    month > PERSONAL_DATES.birthDate.month ||
+    (month === PERSONAL_DATES.birthDate.month && day >= PERSONAL_DATES.birthDate.day)
+
+  return {
+    age: year - PERSONAL_DATES.birthDate.year - (birthdayHasPassed ? 0 : 1),
+    nursingYears: year - PERSONAL_DATES.nursingStartYear,
+    practiceYears: year - PERSONAL_DATES.practiceStartYear,
+  }
+}
 
 export const OPENING_HOURS = {
   weekdays: 'Maandag – vrijdag: 10u – 20u',
@@ -17,7 +46,6 @@ export const OPENING_HOURS = {
 export const NAV_LINKS = [
   { label: 'Behandelingen', href: '/behandelingen' },
   { label: 'Tarieven', href: '/tarieven' },
-  { label: 'Abonnementen', href: '/abonnementen' },
   { label: 'Over mij', href: '/over-mij' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Contact', href: '/contact' },
@@ -111,7 +139,6 @@ export const TARIEVEN: TarievenGroep[] = [
     slug: 'sportmassage',
     naam: 'Sportmassage',
     rijen: [
-      { behandeling: 'Rug-nek-benen', duur: "90'", prijs: '€100', calSlug: 'sport-rug-nek-benen-90' },
       { behandeling: 'Rug-nek-benen', duur: "60'", prijs: '€70', calSlug: 'sport-rug-nek-benen-60' },
       { behandeling: 'Rug-nek', duur: "40'", prijs: '€50', calSlug: 'sport-rug-nek-40' },
       { behandeling: 'Benen', duur: "40'", prijs: '€50', calSlug: 'sport-benen-40' },
@@ -121,10 +148,10 @@ export const TARIEVEN: TarievenGroep[] = [
   },
   {
     slug: 'cupping',
-    naam: 'Hijama Cupping',
+    naam: 'Cupping',
     rijen: [
-      { behandeling: 'Hijama Cupping massage', duur: "30'", prijs: '€40', calSlug: 'cupping-massage-30' },
-      { behandeling: 'Hijama Cupping', duur: "20'", prijs: '€25', calSlug: 'cupping-20' },
+      { behandeling: 'Cupping massage', duur: "30'", prijs: '€40', calSlug: 'cupping-massage-30' },
+      { behandeling: 'Cupping', duur: "20'", prijs: '€25', calSlug: 'cupping-20' },
     ],
   },
   {
@@ -144,7 +171,7 @@ export type Review = {
 
 export const REVIEWS: Review[] = [
   {
-    naam: 'Els Dewancker',
+    naam: 'Els D.',
     sterren: 5,
     tekst: 'Professionele op maat aanpak, kan Jonas alleen maar warm aanbevelen!',
   },

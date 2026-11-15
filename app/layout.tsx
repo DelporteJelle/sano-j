@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: '%s | Sano-J Massage & Welzijn',
   },
   description:
-    'Professionele massage in Merelbeke bij Gent. Ontspanningsmassage, sportmassage, cupping en medical taping door Jonas Quintyn, verpleegkundige met 17 jaar ervaring.',
+    'Professionele massage in Merelbeke bij Gent. Ontspanningsmassage, sportmassage, cupping en medical taping door Jonas Quintyn, verpleegkundige met ervaring.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

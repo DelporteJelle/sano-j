@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import SectionHeader from '@/components/ui/SectionHeader'
+import { getPersonalMilestones } from '@/lib/content'
 
 export default function AboutTeaser() {
+  const { nursingYears, practiceYears } = getPersonalMilestones()
   return (
     <section className="bg-white px-8 md:px-12 py-20">
       <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
@@ -21,7 +23,7 @@ export default function AboutTeaser() {
         <div>
           <SectionHeader tag="Over mij" title="Jonas Quintyn" className="mb-5" />
           <p className="text-[15px] text-brand-gray leading-relaxed mb-1">
-            Ik ben 17 jaar verpleegkundige en al 2 jaar heb ik mijn eigen massagepraktijk
+            Ik ben {nursingYears} jaar verpleegkundige en heb al {practiceYears} jaar mijn eigen massagepraktijk
             in Merelbeke. Mijn hart ligt in de zorg en in het zorg dragen van mensen —
             zowel fysiek als mentaal.
           </p>
@@ -31,7 +33,7 @@ export default function AboutTeaser() {
           </blockquote>
           <ul className="flex flex-col gap-2 mb-8">
             {[
-              '17 jaar verpleegkundige ervaring',
+              `${nursingYears} jaar verpleegkundige ervaring`,
               'Gespecialiseerd in sport & ontspanning',
               'Ruime parking & wachtzaal beschikbaar',
             ].map((item) => (

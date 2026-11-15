@@ -9,13 +9,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Ongeldig verzoek.' }, { status: 400 })
   }
   const { naam, email, telefoon, bericht } = body
+  const telefoonnummer = typeof telefoon === 'string' ? telefoon.trim() : ''
 
-  if (!naam || !email || !bericht) {
-    return NextResponse.json({ error: 'Naam, e-mail en bericht zijn verplicht.' }, { status: 400 })
+  if (!naam || !email || !telefoonnummer || !bericht) {
+    return NextResponse.json({ error: 'Naam, e-mail, telefoonnummer en bericht zijn verplicht.' }, { status: 400 })
   }
 
   try {
-    await sendContactEmail({ naam, email, telefoon, bericht })
+    await sendContactEmail({ naam, email, telefoon: telefoonnummer, bericht })
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Bericht kon niet worden verstuurd. Probeer het later opnieuw.' }, { status: 500 })

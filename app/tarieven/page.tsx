@@ -47,16 +47,16 @@ export default function TarievenPage() {
                 <div className="bg-brand-black px-6 py-4">
                   <h2 className="font-serif text-xl text-white">{groep.naam}</h2>
                 </div>
-                <table className="w-full">
+                <table className="w-full table-fixed">
                   <tbody>
                     {groep.rijen.map((rij, i) => (
                       <tr
                         key={`${rij.behandeling}-${rij.duur}`}
                         className={i % 2 === 0 ? 'bg-white' : 'bg-cream'}
                       >
-                        <td className="px-6 py-3 text-[14px] text-brand-black">{rij.behandeling}</td>
-                        <td className="px-4 py-3 text-[13px] text-brand-gray text-center">{rij.duur}</td>
-                        <td className="px-6 py-3 text-[14px] font-bold text-brand-black text-right">{rij.prijs}</td>
+                        <td className="w-[60%] px-6 py-3 text-[14px] text-brand-black">{rij.behandeling}</td>
+                        <td className="w-[18%] px-4 py-3 text-[13px] text-brand-gray text-center">{rij.duur}</td>
+                        <td className="w-[22%] px-6 py-3 text-[14px] font-bold text-brand-black text-right">{rij.prijs}</td>
                       </tr>
                     ))}
                   </tbody>

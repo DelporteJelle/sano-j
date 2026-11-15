@@ -2,15 +2,18 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import SectionHeader from '@/components/ui/SectionHeader'
-import { CONTACT_INFO } from '@/lib/content'
+import { CONTACT_INFO, getPersonalMilestones } from '@/lib/content'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Over mij',
   description:
-    'Leer Jonas Quintyn kennen: verpleegkundige met 17 jaar ervaring en passie voor massage, sport en welzijn. Praktijk in Merelbeke bij Gent.',
+    'Leer Jonas Quintyn kennen: verpleegkundige met ervaring en passie voor massage, sport en welzijn. Praktijk in Merelbeke bij Gent.',
 }
 
 export default function OverMijPage() {
+  const { age, nursingYears, practiceYears } = getPersonalMilestones()
   return (
     <>
       {/* Hero */}
@@ -37,18 +40,18 @@ export default function OverMijPage() {
             <SectionHeader tag="Wie ben ik?" title="Massage met een hart voor zorg" className="mb-6" />
             <div className="text-[15px] text-brand-gray leading-relaxed space-y-5">
               <p>
-                Ik ben Jonas Quintyn, 38 jaar, woonachtig in Balegem. Ik ben al 17 jaar
-                verpleegkundige en heb al 2 jaar mijn eigen massagepraktijk in Merelbeke.
+                Ik ben Jonas Quintyn, {age} jaar, woonachtig in Balegem. Ik ben al {nursingYears} jaar
+                verpleegkundige en heb al {practiceYears} jaar mijn eigen massagepraktijk in Merelbeke.
               </p>
               <p>
-                Ik zit gans mijn leven ondergedompeld in de sport — van voetbal over wielrennen
+                Sport is altijd een belangrijk deel van mijn leven geweest — van voetbal over wielrennen
                 tot kunstwielrijden. Mijn hart ligt in de zorg en in het zorg dragen van mensen,
                 zowel fysiek als mentaal, om jullie te helpen de beste versie van jezelf te zijn.
               </p>
               <p>
                 In tijden van zelfzorg is het des te belangrijker om op regelmatige basis uw
-                ontspannings- en herstelmomentjes in te plannen. Ik kijk ernaar uit om u te
-                ondersteunen langs de Zwijnaardsesteenweg te Merelbeke.
+                ontspannings- en herstelmomentjes in te plannen. Ik kijk ernaar uit u te
+                verwelkomen in mijn praktijk in Merelbeke.
               </p>
             </div>
 

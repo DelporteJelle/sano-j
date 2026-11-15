@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { connection } from 'next/server'
 import { CONTACT_INFO } from '@/lib/content'
 
 const maskStyle = {
@@ -36,7 +37,13 @@ const SOCIAL_LINKS = [
   },
 ] as const
 
-export default function Footer() {
+export default async function Footer() {
+  await connection()
+  const currentYear = new Intl.DateTimeFormat('en', {
+    timeZone: 'Europe/Brussels',
+    year: 'numeric',
+  }).format(new Date())
+
   return (
     <footer className="bg-brand-black text-white">
       <div className="px-8 md:px-12 pt-14 pb-8">
@@ -55,7 +62,7 @@ export default function Footer() {
 
           {/* Credentials */}
           <div>
-            <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-yellow mb-4">Keurmerk</p>
+            <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-yellow mb-4">Keurmerk &amp; foto&apos;s</p>
             <div className="inline-flex bg-white rounded-lg p-3 mb-4">
               <Image
                 src="/images/belgische-massage-federatie-logo.jpg"
@@ -64,6 +71,7 @@ export default function Footer() {
                 height={55}
               />
             </div>
+            <p className="text-xs text-white/40">Foto&apos;s: Skaeg en Jens Baert</p>
           </div>
 
           {/* Contact */}
@@ -83,7 +91,7 @@ export default function Footer() {
 
         <div className="flex items-center justify-between flex-wrap gap-4">
           <p className="text-xs text-white/20">
-            {`© ${new Date().getFullYear()} Sano-J Massage & Welzijn · Jonas Quintyn · Merelbeke`}
+            {`© ${currentYear} Sano-J Massage & Welzijn · Jonas Quintyn · Merelbeke`}
           </p>
           <div className="flex gap-2.5">
             {SOCIAL_LINKS.map((social) => (
