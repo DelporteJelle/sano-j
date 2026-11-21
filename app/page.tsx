@@ -40,7 +40,7 @@ export default function HomePage() {
           email: 'jonasquintyn@gmail.com',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Zwijnaardsesteenweg 57A',
+            streetAddress: 'Zwijnaardsesteenweg 56A',
             addressLocality: 'Merelbeke',
             addressRegion: 'Oost-Vlaanderen',
             postalCode: '9820',

@@ -44,7 +44,7 @@ export default function ContactPage() {
           {/* Map embed */}
           <div className="rounded-xl overflow-hidden shadow-sm h-64">
             <iframe
-              src="https://www.google.com/maps?q=Zwijnaardsesteenweg+57A,+9820+Merelbeke&output=embed"
+              src="https://www.google.com/maps?q=Zwijnaardsesteenweg+56A,+9820+Merelbeke&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

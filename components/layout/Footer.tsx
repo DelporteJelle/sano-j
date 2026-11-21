@@ -58,6 +58,7 @@ export default async function Footer() {
               Massage &amp; Welzijn in Merelbeke.<br />
               Door Jonas Quintyn — met een hart voor zorg.
             </p>
+            <p className="text-xs text-white/40 mt-2">Ondernemingsnr.: 0744.530.032</p>
           </div>
 
           {/* Credentials */}
@@ -71,7 +72,7 @@ export default async function Footer() {
                 height={55}
               />
             </div>
-            <p className="text-xs text-white/40">Foto&apos;s: Skaeg en Jens Baert</p>
+            <p className="text-xs text-white/40">Foto&apos;s: Skaeg (Jens Baert)</p>
           </div>
 
           {/* Contact */}
