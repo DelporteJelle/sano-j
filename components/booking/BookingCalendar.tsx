@@ -32,7 +32,7 @@ export default function BookingCalendar({ calSlug, backHref }: BookingCalendarPr
       </Link>
       <Cal
         namespace="sano-j"
-        calLink={`jelle-d-odewhk/${calSlug}`}
+        calLink={`jonas-quintyn-jsxyqi/${calSlug}`}
         style={{ width: '100%', height: '100%', overflow: 'scroll' }}
         config={{ layout: 'month_view' }}
       />

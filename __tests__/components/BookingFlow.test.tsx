@@ -40,11 +40,11 @@ describe('BookingFlow', () => {
   })
 
   it('shows the scoped calendar for a valid type and sessie', () => {
-    searchParamsMock.value = new URLSearchParams('type=sportmassage&sessie=sport-rug-nek-40')
+    searchParamsMock.value = new URLSearchParams('type=sportmassage&sessie=sport-rug-nek-40-euro')
     render(<BookingFlow />)
     expect(screen.getByTestId('cal-embed')).toHaveAttribute(
       'data-cal-link',
-      'jelle-d-odewhk/sport-rug-nek-40'
+      'jonas-quintyn-jsxyqi/sport-rug-nek-40-euro'
     )
   })
 })
